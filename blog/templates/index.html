@@ -61,7 +61,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-        {% for post in posts[0:9] %}
+        {% for post in posts[pagen*10-10:pagen*10] %}
           <div class="post-preview">
             <a href="{{ url_for('post', post_id=post.id) }}">
               <h2 class="post-title">
