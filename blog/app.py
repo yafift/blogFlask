@@ -102,8 +102,8 @@ def edit(post_id):
             tags = TagtoPost.query.filter(TagtoPost.id_post == post_id).join(Tags,  Tags.id==TagtoPost.id_tag).add_columns(Tags.tag).all()
             post.tags = tags
             return render_template('edit.html', post=post)
-    else:
-        return redirect(url_for('index'))
+    
+    return redirect(url_for('index'))
 
 @app.route('/editpost/<int:post_id>', methods=['POST'])
 def editpost(post_id):
